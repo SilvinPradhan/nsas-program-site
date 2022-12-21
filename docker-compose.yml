@@ -1,0 +1,9 @@
+version: "3.8"
+services:
+    nsas-site:
+      build: ./
+      container_name: react-nsas-site
+      ports:
+        - '3000:3000'
+      stdin_open: true
+      tty: true
