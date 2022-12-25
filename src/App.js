@@ -1,10 +1,10 @@
+import Header from './components/Header/Header.component.jsx';
 import React from 'react'
-import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <h1>NSAS</h1>
+    <div>
+      <Header/>
     </div>
   );
 }
