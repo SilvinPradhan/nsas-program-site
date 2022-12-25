@@ -3,7 +3,7 @@ import { ReactComponent as MenuIcon } from '../../icons/ham.svg';
 import { ReactComponent as CloseIcon } from '../../icons/close.svg';
 import logo from '../../icons/logo/NSAS.png'
 
-import {Container, InnerContainer, Logo, LogoContainer, NavIconContainer, SideNavigation, NavLink, DonateButton, HeaderNavigation} from "./Header.styles"
+import {Container, InnerContainer, Logo, LogoContainer, NavIconContainer, SideNavigation, NavLink, DonateButton, HeaderNavigation, Title} from "./Header.styles"
 
 import useMDmediaQuery from '../../hooks/useMDmediaQuery';
 
@@ -50,8 +50,9 @@ const Header = () => {
     <Container isNavOpen={isNavOpen} displayBackground={displayBackground} displayHeader={displayHeader}>
       <InnerContainer>
         <LogoContainer>
-           {/* <Logo src={logo}/>  */}
-           <div><span style={{fontWeight: 700, fontSize: '2rem', color:'green'}}>NSAS</span></div>
+           <div>
+            <Title displayBackground={displayBackground}>NSAS</Title>
+           </div>
         </LogoContainer>
         {isMD && (
         <HeaderNavigation displayBackground={displayBackground}>
@@ -73,7 +74,7 @@ const Header = () => {
         </HeaderNavigation>
         )
       }
-        {!isMD && (<NavIconContainer>
+        {!isMD && (<NavIconContainer displayBackground={displayBackground}>
           {
             isNavOpen ? <CloseIcon onClick={toggleNav} /> : <MenuIcon onClick={toggleNav} />
           }

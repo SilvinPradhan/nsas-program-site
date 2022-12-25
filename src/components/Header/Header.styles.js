@@ -1,10 +1,11 @@
 import styled, { css } from "styled-components";
 // import HomeIcon from "@mui/icons-material/Home";
+import { breakpoints } from "../../styles/globalVars";
 
 const underlineLink = css`
   &:after {
     content: "";
-    background: #38f;
+    background: whitesmoke;
     height: 0.2rem;
     width: 100%;
     position: absolute;
@@ -25,7 +26,7 @@ export const Container = styled.header`
   z-index: 10;
   width: 100%;
   background: ${(props) =>
-    props.displayBackground ? "#3336de" : "transparent"};
+    props.displayBackground ? "#038726" : "transparent"};
   transform: translateY(${(props) => (props.displayHeader ? 0 : "-100%")});
   transition: all 0.5s;
 
@@ -47,12 +48,19 @@ export const InnerContainer = styled.div`
 
 export const LogoContainer = styled.div`
   flex-grow: 1;
-  display: flex;
+  display: flex-row;
   align-items: center;
 `;
 
 export const Logo = styled.img`
   width: 20rem;
+`;
+
+export const Title = styled.div`
+  cursor: pointer;
+  font-size: 2rem;
+  font-weight: 700;
+  color: ${props => props.displayBackground ? 'white' : 'green'};
 `;
 
 export const SideNavigation = styled.nav`
@@ -77,7 +85,7 @@ export const NavLink = styled.a`
 
 export const NavIconContainer = styled.div`
   & svg {
-    fill: #038726;
+    fill: ${props => props.displayBackground ? 'white' : '#038726'};
     height: 2.3rem;
     width: 2.3rem;
     cursor: pointer;
@@ -116,5 +124,9 @@ export const HeaderNavigation = styled.nav`
 
     & > * {
         margin: 0 0.5rem;
+
+        ${breakpoints.lg} {
+          margin: 0 2rem;
+        }
     }
 `;
